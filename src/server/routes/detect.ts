@@ -11,6 +11,7 @@ router.put("/", upload.single("file"), async (req, res) => {
     
     try {
         const imageHandlerResponse = await ImageHandler(file.path)
+        console.log("detectionResponse", imageHandlerResponse)
         if(!imageHandlerResponse) return res.json({
             status: false
         })
